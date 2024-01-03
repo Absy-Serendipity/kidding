@@ -13,8 +13,8 @@ on:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  contents: read
+# permissions:
+#   contents: read
 
 jobs:
   build:
@@ -31,3 +31,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew clean build -x test
       shell: bash
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: 
+          build/libs/*.jar
