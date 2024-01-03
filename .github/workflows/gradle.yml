@@ -32,6 +32,7 @@ jobs:
       run: ./gradlew clean build -x test
       shell: bash
 
+# store build artifacts
     - name: Upload build artifacts
       uses: actions/upload-artifact@v2
       with:
@@ -50,6 +51,7 @@ jobs:
         with:
           name: build-artifacts
 
+# send Jar file to EC2
       - name: SCP JAR to EC2
         uses: appleboy/scp-action@master
         with:
