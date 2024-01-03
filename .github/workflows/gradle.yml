@@ -58,5 +58,5 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-          source: "build/libs/*.jar"
+          source: "build/libs/spring-0.0.1-SNAPSHOT.jar"
           target: "/home/ec2-user/app"
